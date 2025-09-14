@@ -36,13 +36,17 @@ object FunSets {
    * Returns the intersection of the two given sets,
    * the set of all elements that are both in `s` and `t`.
    */
-  def intersect(s: Set, t: Set): Set = ???
+  def intersect(s: Set, t: Set): Set = {
+    (elem: Int) => contains(s, elem) && contains(t, elem)
+  }
 
   /**
    * Returns the difference of the two given sets,
    * the set of all elements of `s` that are not in `t`.
    */
-  def diff(s: Set, t: Set): Set = ???
+  def diff(s: Set, t: Set): Set = {
+    (elem: Int) => contains(s, elem) && !contains(t, elem)
+  }
 
   /**
    * Returns the subset of `s` for which `p` holds.
